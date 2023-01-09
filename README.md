@@ -1,7 +1,7 @@
 # European Covid Map
 
 A dash app made for fun using publicly available data.  
-The main idea for the project was to provide a map for easy comparison of various stats across european countries and investigate whether the wealth (GDP per capita) and poverty rates have any effect on covid vaccinations and covid related deaths.
+The main idea for the project was to provide a map for easy comparison of various stats across european countries and investigate whether the wealth (GDP per capita) and poverty rates have any effect on covid vaccinations and covid related deaths. It is important to note that the poverty rates used are dependent on where each country decides its poverty line is and therefore can be unreliable.
 
 #### Data Sources:
 https://covid19.who.int/who-data/vaccination-data.csv  
