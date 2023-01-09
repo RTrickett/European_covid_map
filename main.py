@@ -1,3 +1,7 @@
+# Choropleth map of Europe with two scatter plots for comparison and analysis of data
+# Information used: covid vaccinations per 100, covid deaths per million, gdp per capita, % population below the poverty line
+# Dash app will appear on localhost by default (http://127.0.0.1/)
+# Author: Rowan Trickett
 import pandas as pd
 import plotly.express as px
 
@@ -54,7 +58,8 @@ fig2 = px.scatter(df,
                   title='The Effect of GDP on Covid Deaths',
                   labels={'Deaths_per_million': 'Deaths per million',
                           'GDP_per_capita': 'GDP per capita'},
-                  trendline="ols") # inlcude trendline using ordinary least squares 
+                  trendline="ols" # inlcude trendline using ordinary least squares
+)
 fig2.update_layout(title_x=0.5)
 fig2.update_layout(margin=dict(t=50, r=20, l=25, b=20))
 
@@ -66,13 +71,14 @@ fig3 = px.scatter(df,
                   title='The Effect of GDP on Covid Vaccinations',
                   labels={'Persons_fully_vaccinated_per100': 'Persons Fully Vaccinated per 100',
                           'GDP_per_capita': 'GDP per capita'},
-                  trendline="ols")
+                  trendline="ols"
+)
 fig3.update_layout(title_x=0.5)
 fig3.update_layout(margin=dict(t=50, r=20, l=25, b=20))
 
 
 # ------------------------------------------------------------------------------
-# App layout - New
+# App layout
 # Using Dash bootstrap components
 
 app.layout = dbc.Container([
@@ -134,7 +140,7 @@ app.layout = dbc.Container([
 
 ], fluid=True)
 
-# Update map with data selected via the dropdown
+# Update map colours with data selected via the dropdown menu
 @app.callback(Output('my_vaccine_map', 'figure'),
               Input('my_dropdown', 'value')
 )
